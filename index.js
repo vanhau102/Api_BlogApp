@@ -15,7 +15,7 @@ const path = require('path');
 async function DB() {
     try {
         await mongoose.connect('mongodb://localhost:27017/react_blog');
-        console.log('Connection to MongoDB is successfuly');
+        console.log('Connection to MongoDB is successfully');
     } catch (err) {
         console.log('Error connecting to MongoDB', err);
     }

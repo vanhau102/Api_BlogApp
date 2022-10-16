@@ -13,10 +13,10 @@ router.patch("/:id", async (req, res) => {
             req.body.password = await bcrypt.hash(req.body.password, salt);
         }
         try {
-            const upadateUser = await User.findByIdAndUpdate(req.params.id, {
+            const updateUser = await User.findByIdAndUpdate(req.params.id, {
                 $set: req.body,
             }, { new: true });
-            res.status(200).json(upadateUser);
+            res.status(200).json(updateUser);
         } catch (err) {
             res.status(500).json(err);
         }
